@@ -1,0 +1,17 @@
+\begin{tikzpicture}[]
+  
+  \node[obs,] (W) {$W$};
+  \node[latent, left = 1 of W] (L) {$L$};
+  \node[latent, above = 1 of W] (I) {$I$};
+  \node[obs, above = 1 of I] (O) {$O$};
+
+
+  \edge{O}{I};
+  \edge{I}{W};
+  \edge{L}{W};
+
+  
+  \plate {S} {(O)(I)(W)} {$S$}
+  
+
+\end{tikzpicture}

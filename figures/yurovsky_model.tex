@@ -1,0 +1,26 @@
+\begin{tikzpicture}[]
+  
+  \node[obs,] (Wc) {$W_{c}$};
+  \node[obs, left = 1 of Wc] (Lc) {$L_{c}$};
+  \node[obs, above = 1 of Wc] (Ic) {$I_{c}$};
+  \node[obs, right = 1 of Ic] (O) {$O$};
+  \node[latent, right = 1 of Wc] (Ip) {$I_{p}$};
+  \node[obs, below = 1 of Ip] (Wp) {$W_{p}$};
+  \node[latent, below = 1 of Wp] (Lp) {$L_{p}$};
+  \node[latent, below = 2.7 of Lc] (L) {$L$};
+
+  \edge{O}{Ic};
+  \edge{Ic}{Wc};
+  \edge{Lc}{Wc};
+  \edge{Wc}{Ip};  
+  \edge{Ip}{Wp};
+  \edge{Lp}{Wp};
+  \edge{O}{Ip};
+  \edge{L}{Lc};
+  \edge{L}{Lp};
+
+  
+  \plate {S} {(O)(Ic)(Wc)(Ip)(Ic)(Wp)} {$S$}
+  
+
+\end{tikzpicture}
